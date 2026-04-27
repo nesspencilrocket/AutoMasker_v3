@@ -10,6 +10,9 @@ COLMAP/3DGS学習互換の出力を吐くツール。**Grounding DINO + SAM 2** 
 3D Gaussian Splatting シーンへリフト、**C++ / Dear ImGui** の低レイテンシ
 ビューワも同梱します。
 
+## 小言
+作っている方を現実で見かけたのでClaudeとClaude Codeで作成しただけです。
+
 > 📖 **セキュリティ**: [SECURITY.md](SECURITY.md) を必読してください.
 > 特に `automasker.server` はデフォルトで localhost のみにバインドされ、
 > ネットワーク公開には明示的な許可とトークンが必要です.
