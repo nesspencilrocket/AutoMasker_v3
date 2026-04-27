@@ -219,19 +219,6 @@ python -m automasker.mask_lift.lift_cli --backend gsplat --batch-size 2048 \
 
 ### ベンチマーク
 
-```bash
-python -m export.benchmark --image sample.jpg --prompt "person" \
-    --backends torch onnx trt --iters 20
-```
-
-参考値 (RTX 4070, SAM2-L + GDINO-T, 1920×1080):
-
-```
-backend   detect  segment    total   speedup
-torch      22.4     47.1     69.5     1.00x
-onnx       11.8     23.6     35.4     1.96x
-trt         5.3     12.1     17.4     4.00x
-```
 
 ## 3DGS へのつなぎ込み
 
