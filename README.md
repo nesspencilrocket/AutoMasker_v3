@@ -11,7 +11,7 @@ COLMAP/3DGS学習互換の出力を吐くツール。**Grounding DINO + SAM 2** 
 ビューワも同梱します。
 
 #### 小言
-作っている方を現実で見かけたのでClaudeとClaude Codeで作成しただけです。
+作っている方を現実で見かけたのでClaudeとClaude Codeで作成しただけです.<br>
 
 
 
