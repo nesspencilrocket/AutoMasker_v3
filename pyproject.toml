@@ -1,0 +1,72 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "automasker"
+version = "0.3.0b1"
+description = "Text-prompt-driven automatic mask generation for COLMAP / 3DGS training"
+readme = "README.md"
+license = {text = "MIT"}
+requires-python = ">=3.10"
+keywords = ["computer-vision", "segmentation", "3dgs", "colmap", "sam2", "grounding-dino"]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Science/Research",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Scientific/Engineering :: Image Recognition",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+]
+dependencies = [
+    "numpy>=1.24",
+    "opencv-python>=4.9",
+    "Pillow>=10.0",
+    "tqdm>=4.66",
+    "plyfile>=1.0",
+    # Note: torch / torchvision / sam2 / groundingdino-py は
+    # CUDA バージョン依存のため、ユーザー環境に合わせて別途インストール.
+    # 本 pyproject に書くと CPU 版が入って GPU 推論ができない事故が起きる.
+]
+
+[project.optional-dependencies]
+gui = ["PySide6>=6.6"]
+onnx = ["onnxruntime-gpu", "transformers", "onnxsim"]
+trt = ["tensorrt", "pycuda"]
+gsplat = ["gsplat"]
+all = [
+    "PySide6>=6.6",
+    "onnxruntime-gpu",
+    "transformers",
+    "onnxsim",
+    "gsplat",
+]
+dev = [
+    "bandit",
+    "pip-audit",
+]
+
+[project.scripts]
+automasker = "automasker.cli:main"
+automasker-lift = "automasker.mask_lift.lift_cli:main"
+
+[project.urls]
+Documentation = "https://github.com/YOUR-USERNAME/automasker#readme"
+Issues = "https://github.com/YOUR-USERNAME/automasker/issues"
+Source = "https://github.com/YOUR-USERNAME/automasker"
+
+[tool.setuptools]
+packages = [
+    "automasker",
+    "automasker.backends",
+    "automasker.pano",
+    "automasker.mask_lift",
+]
+
+[tool.setuptools.package-data]
+automasker = ["py.typed"]

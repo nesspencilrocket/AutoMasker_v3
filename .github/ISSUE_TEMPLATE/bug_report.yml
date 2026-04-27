@@ -1,0 +1,43 @@
+name: Bug report
+description: 動作が期待通りでない場合
+labels: [bug]
+body:
+  - type: textarea
+    attributes:
+      label: 何が起きたか
+      description: 期待した動作と実際の動作を書いてください
+    validations:
+      required: true
+
+  - type: textarea
+    attributes:
+      label: 再現手順
+      description: |
+        最小の再現手順 (コマンド + 入力の種類). 実データはアップロード不要.
+      placeholder: |
+        1. `python -m automasker.cli -i scene/images -o scene/masks --prompt "..."`
+        2. ...
+
+  - type: input
+    attributes:
+      label: AutoMasker のバージョン
+      placeholder: "v0.3 / git hash"
+
+  - type: input
+    attributes:
+      label: 環境
+      placeholder: "Ubuntu 22.04 / CUDA 12.1 / RTX 4070 / Python 3.11"
+
+  - type: dropdown
+    attributes:
+      label: バックエンド
+      options:
+        - torch
+        - onnx
+        - trt
+        - 不明
+
+  - type: textarea
+    attributes:
+      label: ログ / スタックトレース
+      render: shell

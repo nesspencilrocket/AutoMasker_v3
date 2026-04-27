@@ -1,0 +1,19 @@
+name: Feature request
+description: 新機能の提案
+labels: [enhancement]
+body:
+  - type: textarea
+    attributes:
+      label: 何を解決したいか
+      description: 現状の困りごとと、それをどう改善したいか
+    validations:
+      required: true
+
+  - type: textarea
+    attributes:
+      label: 提案の具体的な内容
+      description: APIの形、CLIオプション、依存が増えるか、など
+
+  - type: textarea
+    attributes:
+      label: 検討した代替案

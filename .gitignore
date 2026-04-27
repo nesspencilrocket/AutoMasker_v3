@@ -1,0 +1,63 @@
+# ==========================================================================
+# AutoMasker .gitignore
+# ==========================================================================
+
+# --- モデルチェックポイント (巨大 + ライセンス注意) ---
+checkpoints/
+*.pt
+*.pth
+*.onnx
+*.engine
+*.trt
+*.ckpt
+
+# --- TensorRT キャッシュ ---
+.trt_cache/
+*.profile
+
+# --- Python ---
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.egg-info/
+build/
+dist/
+.venv/
+venv/
+.env
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# --- C++ / CMake ---
+cpp_frontend/build/
+cpp_frontend/external/imgui/
+cpp_frontend/external/httplib.h
+cpp_frontend/external/stb/
+CMakeCache.txt
+CMakeFiles/
+
+# --- エディタ / OS ---
+.vscode/
+.idea/
+*.swp
+.DS_Store
+Thumbs.db
+
+# --- ユーザーデータ / 出力 ---
+masks/
+mask_lift_out/
+_debug/
+*.mp4
+*.mov
+*.avi
+*.mkv
+scene/
+third_party/
+
+# --- 機密情報 ---
+*.key
+*.pem
+secrets.json
+.automasker_token

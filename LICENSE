@@ -1,0 +1,85 @@
+MIT License
+
+Copyright (c) 2026 AutoMasker contributors
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+
+===============================================================================
+THIRD-PARTY NOTICES
+===============================================================================
+
+本リポジトリは外部の AI モデル / ライブラリに API 経由で依存しています.
+それぞれのコード・モデル重みは本リポジトリに同梱されていませんので、
+各ユーザーが公式配布元から取得・利用することになります.
+各コンポーネントのライセンスに従ってください.
+
+## MIT-compatible (Apache 2.0 / MIT)
+
+- **Segment Anything 2 (SAM 2)** — Meta Platforms, Apache 2.0
+  https://github.com/facebookresearch/sam2
+
+- **Grounding DINO** — IDEA Research, Apache 2.0
+  https://github.com/IDEA-Research/GroundingDINO
+
+- **gsplat** — nerfstudio-project, Apache 2.0
+  https://github.com/nerfstudio-project/gsplat
+
+- **Dear ImGui** — ocornut, MIT
+  https://github.com/ocornut/imgui
+
+- **cpp-httplib** — yhirose, MIT
+  https://github.com/yhirose/cpp-httplib
+
+- **stb_image** — Sean Barrett, Public Domain / MIT
+  https://github.com/nothings/stb
+
+- **PyTorch, OpenCV, Pillow, PySide6, plyfile, tqdm, numpy** —
+  それぞれ BSD / Apache 2.0 / MIT / LGPL (PySide6)
+
+## アルゴリズム引用 (コード流用はなし)
+
+### FlashSplat (Shen et al., ECCV 2024)
+
+`automasker/mask_lift/` のアルゴリズム (2D マスクを 3D Gaussian のラベルへ
+リフトする閉形式解法) は、下記論文のアイデアに基づいています:
+
+    Qiuhong Shen, Xingyi Yang, Xinchao Wang.
+    "FlashSplat: 2D to 3D Gaussian Splatting Segmentation Solved Optimally."
+    ECCV 2024. arXiv:2409.08270
+    https://arxiv.org/abs/2409.08270
+
+**重要**: 論文著者の公式実装 (https://github.com/florinshen/FlashSplat) は
+INRIA の 3D Gaussian Splatting 由来の **研究/評価用途専用ライセンス**
+(非商用) のもとにあります. 本リポジトリの `automasker/mask_lift/` は
+その公式実装のコードを **一切含んでいません**. 論文の数式 (アルゴリズム)
+のみを参照し、独自の Python 実装を書き起こしたものです.
+
+アルゴリズム (アイデア) そのものの著作権は著者に帰属します.
+論文のアイデアを商用製品に組み込む場合は、必要に応じて著者および
+INRIA の研究ライセンスの影響を各自でご確認ください.
+
+## モデル重み
+
+下記の学習済みモデルは本リポジトリには含まれていません.
+`scripts/download_checkpoints.py` で公式配布元から取得します.
+それぞれのモデルライセンスは上記プロジェクトの LICENSE を参照してください.
+
+- sam2.1_hiera_large.pt (Apache 2.0)
+- groundingdino_swint_ogc.pth (Apache 2.0)
+- bert-base-uncased tokenizer (Apache 2.0, Hugging Face 経由)

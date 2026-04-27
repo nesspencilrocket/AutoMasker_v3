@@ -1,0 +1,5 @@
+blank_issues_enabled: false
+contact_links:
+  - name: セキュリティ脆弱性の報告
+    url: https://github.com/YOUR-USERNAME/automasker/security/advisories/new
+    about: 脆弱性は SECURITY.md の手順で private に報告してください

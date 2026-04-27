@@ -1,0 +1,22 @@
+# === 基本 (必須) ===
+numpy>=1.24
+opencv-python>=4.9
+Pillow>=10.0
+tqdm>=4.66
+PySide6>=6.6
+groundingdino-py>=0.4.0
+# torch / torchvision は CUDA 版を別途インストール
+# sam2 はソースから pip install -e .
+
+# === mask-lift (3DGS リフト) ===
+plyfile>=1.0
+# gsplat 厳密版を使うなら: pip install gsplat
+
+# === ONNX 推論 (optional) ===
+# pip install onnxruntime-gpu transformers onnxsim
+
+# === TensorRT 推論 (optional, NVIDIA) ===
+# pip install tensorrt pycuda
+
+# === C++ フロントエンド (optional) ===
+# cpp_frontend/ は CMake + GLFW + ImGui でビルド. README 参照.
